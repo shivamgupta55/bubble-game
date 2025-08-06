@@ -1,0 +1,207 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main{
+    height: 80%;
+    width: 90%;
+  
+      border-radius: 10px;
+    overflow: hidden;
+}
+.main::selection{
+    background-color: rgb(121, 209, 39);
+    color: white;
+}
+.topdisplay{
+    width: 100%;
+    height: 100px;
+      background-color:yellowgreen;
+
+    display: flex;
+   justify-content: center;
+    align-items: center;
+
+  
+}
+.elem{
+    width:10%;
+   display: flex;
+   align-items: center;
+  gap: 10px;
+}
+.box{
+    padding: 10px;
+    background-color: white;
+   border-radius: 5px;
+   font-size: 20px;
+   font-weight: 600;
+}
+.bottomdisplay{
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    gap: 10px;
+    height: calc(100% - 100px);
+    overflow: hidden;
+    padding: 10px;
+      background-color:rgb(233, 443, 132);
+}
+.bubble{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    color: white;
+    background-color: greenyellow;
+    opacity: 0.9;
+    display: flex;
+    text-align: center;
+    align-items:center ;
+    justify-content: center;
+    font-size: 30px;
+}
+.bubble:hover{
+opacity: 1;
+scale: 1.1;
+cursor: pointer;
+} */
+
+/* =========================
+   Bubble Game Stylesheet
+   ========================= */
+
+/* Color Variables */
+:root {
+    --main-bg: #f7f7f7;
+    --primary: yellowgreen;
+    --bubble-bg: #adff2f;
+    --bubble-hover: #9acd32;
+    --box-bg: #fff;
+    --box-text: #222;
+    --bubble-text: #fff;
+    --main-radius: 10px;
+    --bubble-radius: 50%;
+    --bubble-size: 50px;
+    --box-radius: 5px;
+    --gap: 10px;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: var(--main-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Main container */
+.main {
+    width: 90vw;
+    height: 80vh;
+    border-radius: var(--main-radius);
+    overflow: hidden;
+    background: var(--main-bg);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* Top display bar */
+.topdisplay {
+    width: 100%;
+    height: 100px;
+    background: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+}
+
+/* Top display elements */
+.elem {
+    width: 10%;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    justify-content: center;
+}
+
+/* Info boxes */
+.box {
+    padding: 10px 18px;
+    background: var(--box-bg);
+    border-radius: var(--box-radius);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--box-text);
+    min-width: 40px;
+    text-align: center;
+}
+
+/* Bubble area */
+.bottomdisplay {
+    width: 100%;
+    height: calc(100% - 100px);
+    background: #e1f7e7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--gap);
+    padding: var(--gap);
+    overflow-y: auto;
+}
+
+/* Bubble styles */
+.bubble {
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+    border-radius: var(--bubble-radius);
+    background: var(--bubble-bg);
+    color: var(--bubble-text);
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 500;
+    transition: opacity 0.2s, transform 0.2s;
+    user-select: none;
+}
+
+.bubble:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    background: var(--bubble-hover);
+    cursor: pointer;
+}
+
+/* Selection highlight */
+.main::selection {
+    background: var(--primary);
+    color: var(--bubble-text);
+}
+
+
+
